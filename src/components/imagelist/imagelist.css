@@ -64,9 +64,11 @@ it.
 }
 
 .slider-list.list-container .list .list-item {
-  height: 220px;
+  /*height: 220px;*/ /* remove for RL */
   padding-right: 16px;
-  max-width: 500px;
+  /*max-width: 500px;*/ /* remove for RL */
+  max-width: 546.66px; /* add for RL */
+  max-height: 720.92px; /* add for RL */
 }
 
 .slider-list.list-container .list .list-item:nth-last-child(1) {
@@ -82,6 +84,7 @@ it.
 .slider-list.list-container {
   white-space: nowrap;
   position: relative;
+  padding-top: 2em; /* add for RL */
 }
 
 .slider-list.list-container .list {
@@ -121,7 +124,7 @@ it.
 }
 
 .slider-list .list-item .title {
-  background-color: rgba(0, 0, 0, .45);
+  /*background-color: rgba(0, 0, 0, .45);*/ /* remove for RL */
   color: #fff;
   padding: 7px;
   border-radius: 6px;
@@ -130,6 +133,8 @@ it.
   left: 48%;
   transform: translateX(-50%);
   bottom: 35px;
+  font-size: 1.875em; /* add for RL */
+  font-family: LeJeuneDeck-Regular, 'Times New Roman', Times, serif; /* add for RL */
 }
 
 .slider-list.list-container>h4,
@@ -181,7 +186,8 @@ it.
 
 @media screen and (min-width:1000px) {
   .slider-list.list-container .list .list-item {
-    height: 360px;
+    /*height: 360px;*/ /* remove for RL */
+    height: 720px; /* add for RL */
   }
 
   .slider-list.list-container .right {

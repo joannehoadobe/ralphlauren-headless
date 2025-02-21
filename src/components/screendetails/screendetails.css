@@ -98,7 +98,7 @@
   font-size: 14px;
   -webkit-margin-start: 0;
   margin-inline-start: 0;
-  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Founders Grotesk text Regular,Helvetica,Arial,sans-serif; /*Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;*/
 }
 
 .main-body.screendetail .adventure-details>ul>li {

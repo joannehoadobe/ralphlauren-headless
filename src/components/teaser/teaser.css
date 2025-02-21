@@ -23,9 +23,9 @@
 
 header .hero>.container img {
   width: 100%;
-  height: 100%;
+  /*height: 100%; */ /* remove for RL */
   object-fit: cover;
-  position: fixed;
+  /*position: fixed;*/ /* remove for RL */
   top: 0;
   z-index: -999;
 }
@@ -84,7 +84,7 @@ header .hero {
 }
 
 .hero .content-block .description {
-  display: none;
+  /*display: none;*/
 }
 
 .featured .content-block .description {
@@ -102,7 +102,7 @@ header .hero {
   display: block;
 }
 
-.hero video, .hero img {
+.hero>.container video, .hero>.container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -110,6 +110,16 @@ header .hero {
   position: absolute;
   left: 0;
   top: 0;
+}
+.hero .content-block .hero-image-title img {
+  width: 100%;
+  height: initial;
+  object-fit: cover;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 1em;
 }
 
 .hero::before {
@@ -138,7 +148,7 @@ header .hero {
 
 /** featured **/
 .teaser.featured {
-  background-color: var(--main-light-background);
+  /*background-color: var(--main-light-background); */ /* remove for RL */
   margin: auto;
   width: 100%;
   border-radius: 5px;
@@ -146,8 +156,9 @@ header .hero {
 
 .teaser.featured>.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; 
+  /*align-items: center; */ /* remove for RL */
+  align-items: flex-start; /* add for RL */
   margin: auto;
   justify-content: space-around;
   opacity: 1;
@@ -176,17 +187,129 @@ header .hero {
   }
 
   .teaser.featured>.container {
-    flex-direction: var(--featured-teaser-direction);
-    align-items: center;
+    /*flex-direction: var(--featured-teaser-direction); */ /* remove for RL */
+    /*align-items: center; */ /* remove for RL */
+    align-items: flex-start; /* add for RL */
     padding: 7% 5%;
   }
 
   .teaser.featured {
-    max-width: 1430px;
+    /*max-width: 1430px;*/ /* remove for RL */
   }
 
   .teaser.featured>.container>.content-block p {
     font-size: 1vw;
     text-align: left;
   }
+}
+
+/* custom for RL */
+.teaser.featured {
+  display: flex;
+}
+.hero .content-block .description, .hero .content-block a {
+    text-align: center;
+    color:#fff;
+}
+
+.hero .content-block h2, .hero .content-block h3, .hero .content-block p {
+    text-align: center;
+    color: #fff;
+    font-family: 'lejeune-deck', 'Times New Roman', Times, serif !important;
+}
+.featured .content-block {
+    text-align: left;
+    color: #fff;
+    font-family: 'lejeune-deck', 'Times New Roman', Times, serif !important;
+}
+.featured .content-block h3, .featured .content-block h2, .featured .content-block p, .featured .content-block a {
+    text-align: left;
+    color: #fff;
+    font-family: "LeJeuneDeck-Regular", "lejeune-deck", Times, serif;
+}
+.hero .content-block h2, .hero .content-block h3 {
+    margin-top: 1em;
+}
+
+.hero .content-block a, .featured .content-block a {
+    text-decoration: underline;
+}
+
+.hero .content-block {
+    font-family: 'lejeune-deck', 'Times New Roman', Times, serif !important;
+    text-transform: none;
+    color: currentColor;
+    text-align: inherit;
+}
+
+.hero .hero-image-title {
+    margin-bottom: 1.5em;
+    max-width: 362px;
+    height: 80px;
+}
+.rlc-dek {
+  font-family: "LeJeuneDeck-Regular", Times, serif;
+  margin: auto;
+  font-size: 1.125em;
+  line-height: 1.6em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  width: 32em;
+}
+.hero .rlc-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#rlc-duo1-container .rlc-bgimage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+.rl-featured-background-img {
+  background-image: url('https://www.ralphlauren.com/on/demandware.static/-/Library-Sites-RalphLauren_NA_Library/en_US/v1740050097386/img/202502/20250204-homepage-banner/0204_hp_c02_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+@media screen and (min-width: 768px) {
+  .rlc-desktop-text-center {
+      text-align: center;
+      padding-top: 5%;
+      padding-right: 10%;
+  }
+}
+@media only screen and (min-width: 768px) {
+    #rlc-duo1-r .rlc-title {
+        color: #041e3a;
+        margin-top: 1em;
+        /* margin-bottom: -0.6em; */
+        line-height: 0em;
+        text-align: center;
+        font-size: 1.8em;
+        font-family: "LeJeuneDeck-Regular", "lejeune-deck", Times, serif;
+    }
+}
+#rlc-cardstack1 {
+  width: 29.250em;
+  height: 36em;
+  margin-top: 2.5em;
+}
+@media only screen and (min-width: 1920px) {
+  .rlc-creative_v3.rlc-1440_375_max1920 .rlc-fullbleed {
+      font-size: 21.3333333px !important;
+      max-width: 1920px;
+  }
+}
+.rlc-textgroup h3 {
+  color: #041e3a;
+  font-size: 1.8em;
+  font-family: "LeJeuneDeck-Regular", "lejeune-deck", Times, serif;
+}
+.featured .rlc-picture img {
+  width: 624px;
+  height: 800px; /* RL shows 841.28px; */
 }

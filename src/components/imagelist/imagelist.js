@@ -35,7 +35,7 @@ export const ImageListGQL = `
 
 const cardImageSizes = [
   {
-    imageWidth: '350px',
+    imageWidth: '546px', //'350px',
     renditionName: 'web-optimized-small.webp',
     size: '350px'
   }
@@ -105,7 +105,7 @@ const ImageList = ({ content, config }) => {
   return (
     <div {...listProps} ref={listRef}>
       <section className={`${content.style} list-container`}>
-        {mapJsonRichText(content.headline.json)}
+        {/*mapJsonRichText(content.headline.json)*/}
         {/* {title && <h4>{title.join('')}</h4>} */}
         <i className='arrow left' onClick={e => scrollLeft(e, 300)}></i>
         <div className='list' id='list-container-body' onScroll={e => containerChange(e)} >

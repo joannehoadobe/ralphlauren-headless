@@ -48,7 +48,6 @@ const Screendetails = () => {
     if (context.serviceURL.includes('author')) params['ts'] = new Date().getTime();
     else params['version'] = context.version;
 
-
     sdk.runPersistedQuery(`aem-demo-assets/${context.pqs.config}`, params)
       .then(({ data }) => {
         if (data) {

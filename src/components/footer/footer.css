@@ -7,11 +7,12 @@ it.
 */
 footer {
   width: 100%;
-  background-color: #696969;
+  /*background-color: #696969;*/
   z-index: 9;
 }
 .footer-xf, footer .version {
-  width: 92%;
+  /*width: 92%;*/ /* remove for RL */
+  width: 100%; /* add for RL */
   /* display: flex; */
   flex-direction: column;
   padding: 30px 0;
@@ -31,8 +32,9 @@ footer {
   flex-wrap: wrap;
 }
 
-.footer-xf .image {
-  width: 180px;
+.footer-xf .image, .footer-xf .image img {
+  /*width: 180px;*/ /* remove for RL */
+  width: 100%; /* add for RL */
 }
 
 .footer-xf .navigation {
@@ -48,5 +50,198 @@ footer {
   flex-direction: column;
 }
 
+/* more custom for RL */
 
+footer {
+  clear: both;
+  letter-spacing: .3px;
+  padding: 0 0 1.875rem;
+  border-top: 1px solid #d1d1d1;
+}
+.footer-container {
+  max-width: 1800px; 
+  margin: 0 auto;
+  padding: 1.875rem 0 0;
+  display: flex
+;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
+@media screen and (min-width: 1200px) {
+  .footer-container {
+      padding: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-container .footer-email-signup {
+      flex-grow: 1;
+      width: 25%;
+      border-bottom: none;
+      padding: 0 1.25rem 1.875rem 1.875rem;
+      margin: 2.1875rem 0;
+      order: 4;
+  }
+}
+
+.footer-container .footer-email-signup form {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.email-subscribe {
+  position: relative;
+  margin: 0 auto;
+  clear: both;
+  float: left;
+}
+
+.hide {
+  display: none;
+}
+@media screen and (min-width: 960px) {
+  .footer-container .footer-email-signup .footer-email-opt-in-text {
+      margin-top: 1.25rem;
+  }
+}
+.footer-container .footer-email-signup p {
+  color: #4b5e96;
+  text-decoration: none;
+  font-size: .75rem;
+  font-family: Founders Grotesk text Regular, Helvetica, Arial, sans-serif;
+  font-style: Normal;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: .00156rem;
+  margin: 0;
+}
+@media screen and (min-width: 1200px) {
+  .footer-container .footer-item.first-column {
+      order: 1;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-container .footer-item {
+      /*width: 25%;*/ /* remove for RL */
+      width: 21%;
+  }
+}
+@media screen and (min-width: 960px) {
+  .footer-container .footer-item {
+      border-top: none;
+      flex-grow: 1;
+      padding: 0 0 0 1.875rem;
+      margin: 2.1875rem 0;
+      border-right: 1px solid #d1d1d1;
+  }
+}
+@media screen and (min-width: 960px) {
+  .footer-container .footer-item h3 {
+      padding-top: 0;
+  }
+}
+.footer-container .footer-item h3 {
+  margin-top: 0;
+  /*padding-top: 1.25rem; */
+  position: relative;
+}
+.footer-container h3 {
+  margin-bottom: 1.375rem;
+}
+@media screen and (min-width: 960px) {
+  .footer-container h3 {
+      font-size: .875rem;
+  }
+}
+.footer-container h3 {
+  /*font-size: .75rem;*/
+  text-transform: uppercase;
+  color: #041e3a;
+  letter-spacing: .00313rem;
+  font-family: Founders Grotesk Text Medium, Helvetica, Arial, sans-serif;
+  font-weight: 500 /*!rtl:700*/;
+  font-style: Normal;
+  text-align: left;
+}
+@media screen and (min-width: 960px) {
+  .footer-container .footer-item ul {
+      margin-bottom: 0;
+      display: block !important;
+  }
+}
+.footer-container ul {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 960px) {
+  .footer-container .footer-item ul li {
+      margin-bottom: .625rem;
+  }
+}
+.footer-container ul li {
+  list-style: none;
+}
+@media screen and (min-width: 1200px) {
+  .footer-container .footer-item.second-column {
+      order: 2;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-container .footer-item.third-column {
+      order: 3;
+  }
+}
+
+input[type=date], input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text] {
+  border: 1px solid #757575;
+  box-sizing: border-box;
+  /*padding: 1.4375rem 1.5rem .75rem; */
+  text-indent: 0;
+  width: 100%;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+@media screen and (min-width: 960px) {
+  .footer-container .footer-email-signup form input {
+      padding: .78125rem 1.25rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-container .footer-email-signup button {
+      width: 86px;
+      max-width: none;
+  }
+}
+@media screen and (min-width: 960px) {
+  .footer-container .footer-email-signup button {
+      padding: .4375rem 0 .5rem;
+  }
+}
+.button, .buttonstyle, button, input[type=button] {
+  background-color: #041e3a;
+  border: 1px solid #041e3a;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .75rem;
+  letter-spacing: .05em;
+  /*margin: 15px 0 0;
+  min-height: 3.25rem;
+  padding: .9375rem 0;*/
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .5sease;
+  outline: 0;
+  /*width: 100%;*/
+  line-height: 1.25rem;
+  font-family: Founders Grotesk Mono Regular, Arial, Helvetica, sans-serif;
+  font-style: Normal;
+  font-weight: 500;
+}
+.footer-item li {
+  font-family: Founders Grotesk text Regular, Helvetica, Arial, sans-serif;
+}

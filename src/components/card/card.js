@@ -77,7 +77,6 @@ const Teaser = ({ content }) => {
 
   useEffect(() => {
     setStyle(content.style);
-    //console.log('content = ' + JSON.stringify(content, null, 2));
   }, [content.style, content.title]);
 
   divRef.current.addEventListener('aue:content-patch', (event) => {
@@ -116,32 +115,17 @@ const Teaser = ({ content }) => {
 
   return (
     <div {...editorProps}>
-      <section className={'teaser ' + style + (inFrame ? ' iframe' : '') + (style == 'featured' ? ' rl-featured-background-img' : '')} id={id} ref={divRef}>
-        <div className={'container'}>
+      <section className={'teaser ' + style + (inFrame ? ' iframe' : '')} id={id} ref={divRef}>
+        <div className='container'>
           {renderAsset(content)}
           <div className='content-block'>
-            {/*<span className='title' data-aue-prop='title' data-aue-type='text' data-aue-label='Title'>{content.title}</span>
+            <span className='title' data-aue-prop='title' data-aue-type='text' data-aue-label='Title'>{content.title}</span>
             <span className='seperator'></span>
-              */}
-            {content.teaserTitleImage && (
-              <div className='hero-image-title'>
-                <img src={content.teaserTitleImage?._authorUrl} style={{width: content.teaserTitleImage?.width, left: '25%'}}/>
-              </div>
-            )}
-
             {content.preTitle && (
               <span className='preTitle' data-aue-prop='preTitle' data-aue-type='text' data-aue-label='Pre-Title'>{content.preTitle}</span>
             )}
-
             {content.description && (
-              <div className='rlc-dek'> 
-                <p className='description' data-aue-prop='description' data-aue-type='richtext' data-aue-label='Description' dangerouslySetInnerHTML={{__html:content.description.html}}></p>
-              </div>
-            )}
-            {content.callToAction && content.callToActionLink2 && (
-              <div className='rlc-links'> 
-                <a href={content.callToActionLink2} target='_blank' rel='noreferrer'>{content.callToAction}</a>
-              </div>
+              <p className='description' data-aue-prop='description' data-aue-type='richtext' data-aue-label='Description' dangerouslySetInnerHTML={{__html:content.description.html}}></p>
             )}
             {/*
             {content.description && content.description.plaintext && (
@@ -153,20 +137,6 @@ const Teaser = ({ content }) => {
               */}
           </div>
         </div>
-        {style == 'featured' && (
-          <div className='rlc-textgroup rlc-desktop-text-center rlc-mobile-text-center'> 
-            <h3 id="rlc-title-edpicks" className="rlc-title rlc-h3">Sophisticated <span>Sportswear</span></h3>
-            <div id='' className='rlc-fullbleed rlc-block rlc-cardstack rlc-hasarrows rlc-hasbuttons rlc-wasviewed rlc-isvisible user_paused'>
-              <div className={'container rl-featured-other'}>
-                <picture className="rlc-picture">
-                  <source className="rlc-image-src-desktop" media="(min-width: 768px)" srcSet="https://www.ralphlauren.com/on/demandware.static/-/Library-Sites-RalphLauren_NA_Library/en_US/v1740136691955/img/202502/20250204-homepage-banner/0204_hp_c03a_img.jpg"/>
-                  <source className="rlc-image-src-mobile" media="(max-width: 767px)" srcSet="https://www.ralphlauren.com/on/demandware.static/-/Library-Sites-RalphLauren_NA_Library/en_US/v1740136691955/img/202502/20250204-homepage-banner/0204_hp_m_c03a_img.jpg"/>
-                  <img className="rlc-image rlc-image--primary rlc-imgLoaded" alt="Man wears grey jacket over green turtleneck with white pants." loading="lazy"/>
-                </picture>
-              </div>
-            </div>
-          </div>
-        )}
       </section>
 
     </div>

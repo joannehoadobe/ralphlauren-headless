@@ -1,11 +1,20 @@
 @font-face {
   font-family: adobeclean-regular;
-  src: url('../../media/fonts/AdobeClean-Regular.ttf'), format('truetype');
+  /*src: url('../../media/fonts/AdobeClean-Regular.ttf'), format('truetype');*/
+  src: url('../../media/fonts/FoundersGroteskMonoWeb-Regular.woff'), format('woff');
 }
 
 @font-face {
   font-family: adobeclean-light;
-  src: url('../../media/fonts/AdobeClean-Light.ttf'), format('truetype');
+  /*src: url('../../media/fonts/AdobeClean-Light.ttf'), format('truetype');*/
+  src: url('../../media/fonts/FoundersGroteskMonoWeb-Light.woff'), format('woff');
+}
+
+/* font face custom for RL */
+@font-face {
+  font-family: lejeune-deck;
+  /*src: url('../../media/fonts/AdobeClean-Light.ttf'), format('truetype');*/
+  src: url('../../media/fonts/LeJeuneDeck-Regular-Web.woff'), format('woff');
 }
 
 .main.settings {
