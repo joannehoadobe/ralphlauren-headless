@@ -35,6 +35,10 @@ header nav .nav-brand img {
   padding-top: 18px; /*8px;;*/
 }
 
+header nav .nav-brand.nav-img-bkgd-dark {
+  filter: brightness(0) invert(1);
+}
+
 /* hamburger */
 header nav .nav-hamburger {
   grid-area: hamburger;
@@ -167,7 +171,8 @@ header .nav-sections a.navItem {
 }
 
 header .nav-sections a.navItem.dark-nav {
-  color: var(--dark-nav);
+  /*color: var(--dark-nav); */ /* remove for RL */
+  color: #041e3a; /* add for RL */
 }
 
 header .nav-sections a.navItem.light-nav {
@@ -329,6 +334,7 @@ a:focus::after {
   header nav .nav-tools {
     margin-right: 40px;
     display: unset;
+    padding-right: 40px;
   }
 
   nav .nav-sections a.navItem {
@@ -5126,18 +5132,18 @@ header .free-shipping-progress .free-shipping-bar-container .free-shipping-bar {
   line-height: 1.375rem
 }
 
-header nav .nav-tools > p:nth-child(1) {
+header nav .nav-tools.rl-tools-bkgd-dark > p:nth-child(1) {
   display: flex;
 }
 
-header nav .nav-tools > p:nth-child(2)::after {
+header nav .nav-tools.rl-tools-bkgd-dark  > p:nth-child(2)::after {
   content: "\e917";
   font-family: RL-icons;
   color: #fff;
   font-size: 18px;
 }
 
-header nav .nav-tools > p:nth-child(3)::after {
+header nav .nav-tools.rl-tools-bkgd-dark  > p:nth-child(3)::after {
   color: #fff;
   font-size: 18px;
   padding: 0;
@@ -5146,10 +5152,37 @@ header nav .nav-tools > p:nth-child(3)::after {
   width: 0.875rem;
 }
 
-header nav .nav-tools > p:nth-child(4)::after {
+header nav .nav-tools.rl-tools-bkgd-dark  > p:nth-child(4)::after {
   content: "\e90c";
   font-family: RL-icons;
   color: #fff;
+  font-size: 18px;
+}
+
+header nav .nav-tools.rl-tools-bkgd-light > p:nth-child(1) {
+  display: flex;
+}
+
+header nav .nav-tools.rl-tools-bkgd-light  > p:nth-child(2)::after {
+  content: "\e917";
+  font-family: RL-icons;
+  color: #041e3a;
+  font-size: 18px;
+}
+
+header nav .nav-tools.rl-tools-bkgd-light  > p:nth-child(3)::after {
+  color: #041e3a;
+  font-size: 18px;
+  padding: 0;
+  content: "\e900";
+  font-family: Rl-icons;
+  width: 0.875rem;
+}
+
+header nav .nav-tools.rl-tools-bkgd-light  > p:nth-child(4)::after {
+  content: "\e90c";
+  color: #041e3a;
+  font-family: RL-icons;
   font-size: 18px;
 }
 
@@ -5180,4 +5213,16 @@ header nav .nav-tools {
 .icon-white path {
   fill: #fff;
   height: 16px;
+}
+.icon-dark path {
+  fill: #041e3a;
+  height: 16px;
+}
+header .rl-nav-default {
+  background: var(--main-color-opacity);
+  transition: all 0.3s;
+}
+header .rl-nav-white {
+  background-color: #fff;
+  transition: all 0.3s;
 }

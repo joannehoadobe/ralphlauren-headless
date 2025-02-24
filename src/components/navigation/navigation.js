@@ -33,6 +33,33 @@ const Navigation = ({ className, config, screen }) => {
   const [expanded, setExpanded] = useState(false);
   const [logo, setLogo] = useState({});
   const handleError = useErrorHandler();
+  const [scrollPosition, setScrollPosition] = useState(0);
+  // added for RL
+  const [navClassName, setNavClassName] = useState('rl-nav-default');
+  const [navTextClassName, setNavTextClassName] = useState('light-nav');
+  const [toolsClassName, setToolsClassName] = useState('rl-tools-bkgd-dark');
+  const [logoClassName, setLogoClassName] = useState('nav-img-bkgd-dark');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    // console.log('scroll position = ' + scrollPosition);
+    const newNavClassName = scrollPosition > 50 ? 'rl-nav-white' : 'rl-nav-default';
+    setNavClassName(newNavClassName);
+
+    const newNavTextClassName = scrollPosition > 50 ? 'dark-nav' : 'light-nav';
+    setNavTextClassName(newNavTextClassName);
+    const newToolsClassName = scrollPosition > 50 ? 'rl-tools-bkgd-light' : 'rl-tools-bkgd-dark';
+    setToolsClassName(newToolsClassName);
+    const newLogoClassName = scrollPosition > 50 ? 'nav-img-bkgd-light' : 'nav-img-bkgd-dark';
+    setLogoClassName(newLogoClassName);
+
+    // clean up the even listener on component unmount
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrollPosition]);
 
   useEffect(() => {
     function fetchNav() {
@@ -81,7 +108,7 @@ const Navigation = ({ className, config, screen }) => {
 
   return (
     <React.Fragment>
-      <nav id="navbar" aria-expanded={expanded}>
+      <nav id="navbar" aria-expanded={expanded} className={navClassName}>
         <div className='nav-hamburger' onClick={() => {
           if (expanded) setExpanded(false);
           else setExpanded(true);
@@ -89,14 +116,15 @@ const Navigation = ({ className, config, screen }) => {
         }}>
           <div className='nav-hamburger-icon'></div>
         </div>
-        <div className='nav-brand'>
+        <div className={'nav-brand ' + logoClassName}>
           <Link to={'/'}><Image alt='logo' asset={logo} imageProps={{}} width={108} height={56} /></Link>
         </div>
         <div className='nav-sections'>
           <ul>
             {nav && nav.data?.screenV2List?.items.map((item, i) => (
               <li key={i}>
-                <LinkManager className={`navItem ${className}`} item={item} ue={false}>{item.screenTitle}</LinkManager>
+                {/*<LinkManager className={`navItem ${className}`} item={item} ue={false}>{item.screenTitle}</LinkManager>*/}
+                <LinkManager className={`navItem ${navTextClassName}`} item={item} ue={false}>{item.screenTitle}</LinkManager>
               </li>
             ))}
             {/*
@@ -104,10 +132,10 @@ const Navigation = ({ className, config, screen }) => {
             */}
           </ul>
         </div>
-        <div className="nav-tools">
+        <div className={'nav-tools ' + toolsClassName}>
           <p className="black">
             <span className="icon icon-search" style={{fill: 'rgb(0, 0, 0)'}}>
-              <svg className="icon-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <svg className={scrollPosition > 50 ? 'icon-dark' : 'icon-white'} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                 <path d="M16.9,15.5c2.4-3.2,2.2-7.7-0.7-10.6c-3.1-3.1-8.1-3.1-11.3,0c-3.1,3.2-3.1,8.3,0,11.4
                 c2.9,2.9,7.5,3.1,10.6,0.6c0,0.1,0,0.1,0,0.1l4.2,4.2c0.5,0.4,1.1,0.4,1.5,0c0.4-0.4,0.4-1,0-1.4L16.9,15.5
                 C16.9,15.5,16.9,15.5,16.9,15.5L16.9,15.5z M14.8,6.3c2.3,2.3,2.3,6.1,0,8.5c-2.3,2.3-6.1,2.3-8.5,0C4,12.5,4,8.7,6.3,6.3
