@@ -2234,7 +2234,7 @@ div.level-3 .menu-wrap .nav-level-3-wrapper .nav ul li .cat-name.add-custom-colo
   color: #fff;
   font-size: 1.625rem;
   display: block;
-  vertical-align: bottom;
+  /*vertical-align: bottom;*/
   padding-top: .75rem;
   padding-bottom: .5rem
 }
@@ -4081,7 +4081,7 @@ header .free-shipping-progress .free-shipping-bar-container .free-shipping-bar {
   .refinements-pill .refinement-pill ul,.refinements-pill .search-refinement-pill ul,.search-refinements-pill .refinement-pill ul,.search-refinements-pill .search-refinement-pill ul {
       overflow:hidden;
       overscroll-behavior: contain;
-      overflow-scrolling: touch;
+      /*overflow-scrolling: touch;*/
       scroll-behavior: smooth;
       scrollbar-width: none;
       overflow-x: auto;
@@ -4449,7 +4449,7 @@ header .free-shipping-progress .free-shipping-bar-container .free-shipping-bar {
 
 .header-search .full-search .clear-search {
   display: inline-block;
-  float: right;
+  /*float: right;*/
   margin: 0;
   line-height: 2.375rem;
   cursor: pointer;

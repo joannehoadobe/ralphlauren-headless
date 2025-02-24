@@ -83,9 +83,9 @@ header .hero {
   text-transform: uppercase;
 }
 
-.hero .content-block .description {
+/* .hero .content-block .description { */
   /*display: none;*/
-}
+/* } */
 
 .featured .content-block .description {
   font-size: 3vw;
@@ -193,9 +193,9 @@ header .hero {
     padding: 7% 5%;
   }
 
-  .teaser.featured {
-    /*max-width: 1430px;*/ /* remove for RL */
-  }
+  /* .teaser.featured { */
+    /*max-width: 1430px;*/
+  /* } */
 
   .teaser.featured>.container>.content-block p {
     font-size: 1vw;

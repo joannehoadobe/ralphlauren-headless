@@ -27,6 +27,7 @@ export const NavigationGQL = `query ScreenList($locale: String!) {
   }
 }`;
 
+// eslint-disable-next-line no-unused-vars
 const Navigation = ({ className, config, screen }) => {
   const context = useContext(AppContext);
   const [nav, setNav] = useState('');
@@ -88,6 +89,7 @@ const Navigation = ({ className, config, screen }) => {
     if (Object.keys(context.navigationResponse).length === 0) fetchNav();
   }, [handleError, config, context]);
 
+  // eslint-disable-next-line no-unused-vars
   function viewGQL() {
     document.querySelector('#flyout') && document.querySelector('#flyout').setAttribute('aria-expanded', true);
     return false;
