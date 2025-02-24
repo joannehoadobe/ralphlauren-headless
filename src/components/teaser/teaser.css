@@ -172,7 +172,7 @@ header .hero {
 
 .teaser.featured>.container>.content-block {
   max-width: 500px;
-  padding: 0 22px 22px;
+  padding: 0 0 22px;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -262,6 +262,12 @@ header .hero {
   margin-top: 1em;
   font-size: var(--fontSizeH3);
 }
+
+.featured .rlc-teaser-title  {
+  text-align: left;
+  font-size: var(--fontSizeH3);
+}
+
 .hero .rlc-links {
     display: flex;
     flex-wrap: wrap;
