@@ -125,7 +125,7 @@ const Teaser = ({ content }) => {
               */}
             {content.teaserTitleImage && (
               <div className='hero-image-title'>
-                <img src={content.teaserTitleImage?._authorUrl} style={{width: content.teaserTitleImage?.width, left: '25%'}}/>
+                <img src={content.teaserTitleImage?._authorUrl} style={{width: (content.teaserTitleImage?.width ? content.teaserTitleImage?.width : '330px'), left: '25%'}}/>
               </div>
             )}
 

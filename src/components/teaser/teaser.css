@@ -313,3 +313,6 @@ header .hero {
   width: 624px;
   height: 800px; /* RL shows 841.28px; */
 }
+.home-hero .content-block .rlc-dek {
+  padding-top: 1em;
+}
