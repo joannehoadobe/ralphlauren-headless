@@ -247,7 +247,7 @@ header .hero {
     max-width: 362px;
     height: 80px;
 }
-.rlc-dek {
+.rlc-dek, .rlc-teaser-title {
   font-family: "LeJeuneDeck-Regular", Times, serif;
   margin: auto;
   font-size: 1.125em;
@@ -256,6 +256,11 @@ header .hero {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   width: 32em;
+  color: #fff;
+}
+.hero .rlc-teaser-title {
+  margin-top: 1em;
+  font-size: var(--fontSizeH3);
 }
 .hero .rlc-links {
     display: flex;
@@ -313,6 +318,6 @@ header .hero {
   width: 624px;
   height: 800px; /* RL shows 841.28px; */
 }
-.home-hero .content-block .rlc-dek {
+.home-hero .content-block .rlc-dek, .home-hero .content-block .rlc-teaser-title {
   padding-top: 1em;
 }

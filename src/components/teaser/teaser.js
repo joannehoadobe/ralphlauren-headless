@@ -3,8 +3,8 @@ import React, { useState, useEffect, useRef, useId } from 'react';
 import PropTypes from 'prop-types';
 import Video from '../video';
 import Image from '../image';
-import { TextWithPlaceholders } from '../../utils/placeholders';
-import LinkManager from '../../utils/link-manager';
+//import { TextWithPlaceholders } from '../../utils/placeholders';
+//import LinkManager from '../../utils/link-manager';
 import './teaser.css';
 
 const imageSizes = [
@@ -125,12 +125,18 @@ const Teaser = ({ content }) => {
               */}
             {content.teaserTitleImage && (
               <div className='hero-image-title'>
-                <img src={content.teaserTitleImage?._authorUrl} style={{width: (content.teaserTitleImage?.width ? content.teaserTitleImage?.width : '330px'), left: '25%'}}/>
+                <img src={content.teaserTitleImage?._authorUrl} style={{width: (content.teaserTitleImage?.width ? content.teaserTitleImage?.width : '330px'), left: '40%'}}/>
               </div>
             )}
-
+            {/*
             {content.preTitle && (
-              <span className='preTitle' data-aue-prop='preTitle' data-aue-type='text' data-aue-label='Pre-Title'>{content.preTitle}</span>
+              <h3 className='preTitle' data-aue-prop='preTitle' data-aue-type='text' data-aue-label='Pre-Title'>{content.preTitle}</h3>
+            )}
+              */}
+            {content.title && (
+              <div className='rlc-teaser-title' data-aue-prop='title' data-aue-type='text' data-aue-label='Title'>
+                {content.title}
+              </div>
             )}
 
             {content.description && (
@@ -139,7 +145,7 @@ const Teaser = ({ content }) => {
               </div>
             )}
             {content.callToAction && content.callToActionLink2 && (
-              <div className='rlc-links'> 
+              <div className='rlc-links' data-aue-prop='callToAction' data-aue-type='text' data-aue-label='Call To Action'> 
                 <a href={content.callToActionLink2} target='_blank' rel='noreferrer'>{content.callToAction}</a>
               </div>
             )}
