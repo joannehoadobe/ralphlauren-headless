@@ -22,7 +22,7 @@ const Footer = ({ config }) => {
     // const url = context.defaultServiceURL === context.serviceURL || context.serviceURL.includes('publish-') ?
     //   config._publishUrl.replace('.html', '.model.json') :
     //   config._authorUrl.replace('.html', '.model.json');
-    const url = context.defaultServiceURL === context.serviceURL || context.serviceURL.includes('publish-') ?
+    const url = context.defaultServiceURL === context.serviceURL && context.serviceURL.includes('publish-') ?
       config._authorUrl.replace('.html', '.model.json') :
       config._authorUrl.replace('.html', '.model.json');
 
