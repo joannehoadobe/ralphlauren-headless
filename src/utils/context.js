@@ -3,7 +3,8 @@ import BrokenImage from '../media/broken.jpg';
 
 const defaultEndpoint = '/content/_cq_graphql/aem-demo-assets/endpoint.json';
 const defaultProject = 'ralphlauren'; //'wknd-headless';
-const defaultServiceURL = 'https://author-p53852-e347001.adobeaemcloud.com/'; /*'https://publish-p124331-e1227315.adobeaemcloud.com/';*/
+const defaultServiceURL = 'https://author-p105154-e986085.adobeaemcloud.com/'; 
+// 'https://author-p53852-e347001.adobeaemcloud.com/'; /*'https://publish-p124331-e1227315.adobeaemcloud.com/';*/
 const defaultPlaceholdersExtensionURL = 'https://1154643-geoipplaceholders.adobeio-static.net/api/v1/web/geoip-placeholders';
 
 export const AppContext = createContext({
